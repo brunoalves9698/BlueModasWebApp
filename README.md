@@ -7,16 +7,16 @@ Front-end of virtual store for Blue Modas Built with Angular 10
 Front-end of virtual store for Blue Modas Built with Angular 10
 
 **Home Page**
-![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shots/blob/master/01-home.JPG)
+![app](https://github.com/brunoalves9698/bluemodaswebapp/blob/master/screen-shots/01-home.JPG)
 
 **Cart Page**
-![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shots/blob/master/02-carrinho.JPG)
+![app](https://github.com/brunoalves9698/bluemodaswebapp/blob/master/screen-shots/02-carrinho.JPG)
 
 **Client Page**
-![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shots/blob/master/03-cliente.JPG)
+![app](https://github.com/brunoalves9698/bluemodaswebapp/blob/master/screen-shots/03-cliente.JPG)
 
 **History Page**
-![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shots/blob/master/04-historico.JPG)
+![app](https://github.com/brunoalves9698/bluemodaswebapp/blob/master/screen-shots/04-historico.JPG)
 
 ## Why?
 
