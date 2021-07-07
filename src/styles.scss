@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./theme/variables.scss";
+
+@font-face {
+  font-family: "Baloo";
+  src: url("./assets/fonts/baloo-regular.ttf");
+}
+
+* {
+  font-family: "Baloo";
+}
+
+html,
+body {
+  background-color: $color-light !important;
+}
+
+.container {
+  margin-top: 130px;
+  margin-bottom: 80px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.no-border {
+  border: none;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary {
+  color: $color-secondary;
+}
+
+.text-success {
+  color: $color-success;
+}
+
+.text-warning {
+  color: $color-warning;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
+.text-dark {
+  color: $color-dark;
+}
+
+.text-medium {
+  color: $color-medium;
+}
+
+.text-light {
+  color: $color-light;
+}
+
+.background-primary {
+  background-color: $color-primary;
+}
+
+.background-success {
+  background-color: $color-success;
+}
+
+.background-warning {
+  background-color: $color-warning;
+}
+
+.background-danger {
+  background-color: $color-danger;
+}
+
+.background-dark {
+  background-color: $color-dark;
+}
+
+.background-medium {
+  background-color: $color-medium;
+}
+
+.background-light {
+  background-color: $color-light;
+}
+
+button i {
+  margin-right: 7px;
+}
+
+.btn-primary {
+  background-color: $color-primary !important;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: $color-danger !important;
+  color: #fff;
+}

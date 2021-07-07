@@ -1,0 +1,127 @@
+@import "/src/theme/variables.scss";
+
+#main-spinner {
+  height: calc(100vh - 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+  background: rgba($color-primary, 1);
+  background: -moz-linear-gradient(top, rgba($color-primary, 1) 0%, rgba($color-secondary, 1) 100%);
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba($color-primary, 1)),
+    color-stop(100%, rgba($color-secondary, 1))
+  );
+  background: -webkit-linear-gradient(top, rgba($color-primary, 1) 0%, rgba($color-secondary, 1) 100%);
+  background: -o-linear-gradient(top, rgba($color-primary, 1) 0%, rgba($color-secondary, 1) 100%);
+  background: -ms-linear-gradient(top, rgba($color-primary, 1) 0%, rgba($color-secondary, 1) 100%);
+  background: linear-gradient(to bottom, rgba($color-primary, 1) 0%, rgba($color-secondary, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$color-secondary, endColorstr=$color-primary, GradientType=0);
+}
+
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #fff;
+  }
+  25% {
+    stroke: #fff;
+  }
+  50% {
+    stroke: $color-warning;
+  }
+  75% {
+    stroke: $color-warning;
+  }
+  100% {
+    stroke: #fff;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #fff;
+  }
+  25% {
+    stroke: #fff;
+  }
+  50% {
+    stroke: $color-warning;
+  }
+  75% {
+    stroke: $color-warning;
+  }
+  100% {
+    stroke: #fff;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}

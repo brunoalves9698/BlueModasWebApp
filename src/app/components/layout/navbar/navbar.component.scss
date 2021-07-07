@@ -1,0 +1,39 @@
+@import "/src/theme/variables.scss";
+
+img {
+  height: 70px;
+}
+
+.nav-link {
+  color: #e7e7e7 !important;
+}
+
+.nav-link.active {
+  color: #fff !important;
+}
+
+.cart-icon {
+  margin-right: 10px;
+  padding: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 2em;
+  text-align: center;
+
+  span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: calc(100vw - 115px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 0.5em;
+    font-weight: 100;
+    color: $color-primary;
+    background-color: $color-warning;
+  }
+}

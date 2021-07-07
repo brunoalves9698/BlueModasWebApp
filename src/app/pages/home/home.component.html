@@ -1,0 +1,31 @@
+<div class="container products-container">
+
+  <app-featured-text>CATÁLOGO DE PRODUTOS</app-featured-text>
+
+  <app-loading-skeleton *ngIf="!products.length"></app-loading-skeleton>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let product of products">
+      <div class="product-content animate__animated animate__zoomIn">
+        <div class="top-content">
+          <div class="img-content">
+            <img [src]="product.image">
+          </div>
+          <div class="caption-content">
+            <div class="item-title">{{ product.title }}</div>
+            <div class="item-description">{{ product.description }}</div>
+          </div>
+        </div>
+        <div class="bottom-content">
+          <div class="item-price">{{ product.price | currency: "BRL" }}</div>
+          <button *ngIf="!alreadyHasInCart(product)" class="btn btn-primary" (click)="addToCart(product)">
+            ADICONAR À CESTA
+          </button>
+          <button *ngIf="alreadyHasInCart(product)" class="btn btn-danger" (click)="removeFromCart(product)">
+            REMOVER DA CESTA
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

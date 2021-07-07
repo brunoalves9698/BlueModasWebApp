@@ -1,0 +1,128 @@
+<div class="container">
+
+  <app-featured-text>FORMULÁRIO DE IDENTIFICAÇÃO</app-featured-text>
+
+  <form [formGroup]="form">
+
+    <div class="row">
+
+      <div class="col-sm">
+        <label>
+          Nome <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="name" />
+        </div>
+        <app-validation-message [control]="form.get('name')" [fieldName]="'Nome'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          E-mail <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="email" />
+        </div>
+        <app-validation-message [control]="form.get('email')" [fieldName]="'E-mail'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          Telefone <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="phone" mask="(00) 00000-0000" />
+        </div>
+        <app-validation-message [control]="form.get('phone')" [fieldName]="'Telefone'">
+        </app-validation-message>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <label>
+          CEP <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="zipCode" mask="00000-000" (keyup)="getAddress()" />
+        </div>
+        <app-validation-message [control]="form.get('zipCode')" [fieldName]="'CEP'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          Logradouro <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="address" />
+        </div>
+        <app-validation-message [control]="form.get('address')" [fieldName]="'Logradouro'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          Número <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="addressNumber" />
+        </div>
+        <app-validation-message [control]="form.get('addressNumber')" [fieldName]="'Número'">
+        </app-validation-message>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <label>
+          Bairro <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" formControlName="neighborhood" />
+        </div>
+        <app-validation-message [control]="form.get('neighborhood')" [fieldName]="'Bairro'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          Estado <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <select class="form-control custom-select" formControlName="stateId" (change)="changeState()">
+            <option [value]="state.id" *ngFor="let state of states">
+              {{ state.nome }}
+            </option>
+          </select>
+        </div>
+        <app-validation-message [control]="form.get('stateId')" [fieldName]="'Estado'">
+        </app-validation-message>
+      </div>
+
+      <div class="col-sm">
+        <label>
+          Cidade <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+          <select class="form-control custom-select" formControlName="cityId">
+            <option [value]="city.id" *ngFor="let city of cities">
+              {{ city.nome }}
+            </option>
+          </select>
+        </div>
+        <app-validation-message [control]="form.get('cityId')" [fieldName]="'Cidade'">
+        </app-validation-message>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!form.valid || isBusy == true" (click)="submitForm()">
+      <i class="fa fa-spinner fa-spin" *ngIf="isBusy"></i>
+      SALVAR
+    </button>
+
+  </form>
+
+</div>

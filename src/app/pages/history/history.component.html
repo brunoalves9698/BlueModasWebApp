@@ -1,0 +1,82 @@
+<div class="container products-container">
+
+  <app-featured-text>HISTÓRICO DE COMPRAS</app-featured-text>
+
+  <app-loading-skeleton *ngIf="!orders.length"></app-loading-skeleton>
+
+  <div *ngIf="orders.length">
+    <div class="order-content row animate__animated animate__zoomIn" *ngFor="let order of orders">
+      <div class="header-content col col-12" (click)="getOrderItems(order)">
+        <div class="row">
+          <div class="col col-12 no-padding">
+            <div class="caption-content">
+              <div class="row">
+                <div class="col-4">
+                  <div class="item-title">
+                    PEDIDO <span class="text-primary">#{{ order.id.substr(0, 6).toUpperCase() }}</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="item-description">{{ order.date | date: 'dd/MM/yyyy HH:mm' }}</div>
+                </div>
+                <div class="collapse-icon-content col-4">
+                  <i class="collapse-icon fa fa-chevron-circle-down text-primary"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="item-description">{{ order.client.name }}</div>
+                </div>
+                <div class="col-4">
+                  <div class="item-description">Telefone: {{ order.client.phone }}</div>
+                </div>
+                <div class="col-4">
+                  <div class="item-description">E-mail: {{ order.client.email }}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="item-description">
+                    {{ order.client.address }}, {{ order.client.addressNumber }}, {{ order.client.neighborhood }},
+                    {{ order.client.zipCode }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12" *ngIf="!isCollapsed(order)">
+        <div *ngFor="let item of order.orderItems">
+          <div class="product-container">
+            <div class="col col-xs-12 no-padding">
+              <div class="product-content">
+                <div class="img-content">
+                  <img [src]="item.product.image">
+                </div>
+                <div class="caption-content">
+                  <div class="item-title">{{ item.quantity }} x {{ item.product.title }}</div>
+                  <div class="row">
+                    <div class="col-9">
+                      <div class="item-description">
+                        {{ item.product.description }}
+                        <small>{{ item.unitPrice | currency: "BRL" }}</small>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="item-price">{{ item.amount | currency: "BRL" }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-right">
+          TOTAL: &nbsp; <span class="text-primary">{{ order.amount | currency: "BRL" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

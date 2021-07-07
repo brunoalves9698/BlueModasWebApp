@@ -1,27 +1,91 @@
-# BlueModasWebApp
+# Blue Modas - WebApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Front-end of virtual store for Blue Modas Built with Angular 10
 
-## Development server
+## About this Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Front-end of virtual store for Blue Modas Built with Angular 10
 
-## Code scaffolding
+**Home Page**
+![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shot/blob/master/01-home.JPG)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Cart Page**
+![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shot/blob/master/02-carrinho.JPG)
 
-## Build
+**Client Page**
+![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shot/blob/master/03-cliente.JPG)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**History Page**
+![app](https://github.com/brunoalves9698/bluemodaswebapp/screen-shot/blob/master/04-historico.JPG)
 
-## Running unit tests
+## Why?
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Project created with the intention of consuming a REST API in order to serve as a client-side for a virtual store.
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Product listing screen
 
-## Further help
+- Cart/Shopping Basket Screen
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Customer registration/update screen
+
+- Purchase history screen
+
+## Architecture and Organization
+
+- Commands Folder
+  - Server Response Model
+  - Models for registering a purchase
+
+- Components Folder
+  - Layout Components (navbar and footer)
+  - Shared and Common Components
+    - Featured Messages
+    - Loading Component
+    - Form Validation Messages
+  
+- Models Folder (with a abstract model base)
+   
+- Pages Folder
+ 
+- Services Folder (with a abstract service base)
+
+- Shared Folder
+  - Constants
+  - Storage (onsite storage classes storage with a abstract storage base)
+  - Utils (cryptography, sort list and whatever needed)
+
+- Assets Folder (fonts, images and whatever needed)
+
+- Theme Folder (style´s variables)
+   
+## Getting Started
+
+### Prerequisites
+
+To run this project in the development mode, you'll need to have a basic environment to run a Angular Application. You can get it from the following links:
+- [Node](https://nodejs.org/en/download/)
+- [Angular](https://angular.io/cli)
+
+### Installing the Project
+
+**Cloning the Repository**
+
+```
+$ git clone https://github.com/brunoalves9698/bluemodaswebapp.git
+
+$ cd bluemodaswebapp
+```
+
+### Running the Project
+
+With all dependencies installed and the environment properly configured, you can now run the app:
+
+```
+$ ng server -o 
+```
+
+## Built With
+
+- [Angular 10](https://angular.io/)

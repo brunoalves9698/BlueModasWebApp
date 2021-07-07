@@ -1,0 +1,77 @@
+<div class="container products-container">
+
+  <app-featured-text *ngIf="products.length">CESTA DE COMPRAS</app-featured-text>
+  <app-featured-text *ngIf="!products.length">SUA CESTA ESTÁ VAZIA :(</app-featured-text>
+
+  <div class="row" *ngIf="products.length">
+    <div class="col col-sm-12 col-md-8">
+      <div class="product-item-container row" *ngFor="let product of products">
+        <div class="col col-sm-8 no-padding">
+          <div class="product-content animate__animated animate__zoomIn">
+            <div class="img-content">
+              <img [src]="product.image">
+            </div>
+            <div class="caption-content">
+              <div class="item-title">{{ product.title }}</div>
+              <div class="item-description">
+                {{ product.description }}
+                <small>{{ product.price | currency: "BRL" }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-sm-4">
+          <div class="product-summary-content">
+            <button class="btn-quantity btn" title="Remover" (click)="decrementQuantity(product)">
+              <i class="fa fa-minus-circle"></i>
+            </button>
+            <span>{{ product.quantity }}</span>
+            <button class="btn-quantity btn" title="Adicionar" (click)="incrementQuantity(product)">
+              <i class="fa fa-plus-circle"></i>
+            </button>
+            <div class="item-price">{{ product.quantity * product.price | currency: "BRL" }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-sm-12 col-md-4">
+      <div class="order-summary-content animate__animated animate__zoomIn">
+        <app-featured-text>
+          Resumo da Compra
+          <i class="fa fa-shopping-cart"></i>
+        </app-featured-text>
+
+        <div class="row" *ngFor="let product of products">
+          <div class="col col-sm-8">
+            <div class="item-title">
+              {{ product.quantity }} x {{ product.title }}
+            </div>
+          </div>
+          <div class="col col-sm-4 text-right">
+            <div class="item-price">{{ product.quantity * product.price | currency: "BRL" }}</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-sm-8">TOTAL</div>
+          <div class="col col-sm-4 text-right">
+            <div class="item-price-total">{{ getTotal() | currency: "BRL" }}</div>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="client">
+          <div class="item-title">{{ client.name }}</div>
+          <div class="item-title">
+            {{ client.address }}, {{ client.address_number }}, {{ client.neighborhood }}, {{ client.zipCode }}
+          </div>
+        </div>
+
+        <button class="btn-make-wish btn btn-primary" [disabled]="isBusy" (click)="finalizeOrder()">
+          <i class="fa fa-spinner fa-spin" *ngIf="isBusy"></i>
+          Finalizar Compra
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
