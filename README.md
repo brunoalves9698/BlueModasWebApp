@@ -83,6 +83,8 @@ $ cd bluemodaswebapp
 With all dependencies installed and the environment properly configured, you can now run the app:
 
 ```
+$ npm install
+
 $ ng server -o 
 ```
 
